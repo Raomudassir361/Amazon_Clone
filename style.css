@@ -1,0 +1,867 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Amazon Ember", "Segoe UI", Arial, sans-serif;
+}
+
+header {
+    width: 100%;
+}
+
+/* --- Theme variables (light default) --- */
+:root {
+    --bg: #eaeded;
+    --navbar-bg: #131921;
+    --navbar-fg: #ffffff;
+    --panel-bg: #232f3e;
+    --panel-fg: #ffffff;
+    --page-fg: #111111;
+}
+
+body.dark {
+    --bg: #0f1115;
+    --navbar-bg: #0b0f14;
+    --navbar-fg: #ffffff;
+    --panel-bg: #121a23;
+    --panel-fg: #ffffff;
+    --page-fg: #e7e9ee;
+}
+
+/* Apply theme colors to major sections */
+.panel {
+    background-color: var(--panel-bg);
+    color: var(--panel-fg);
+}
+
+.slide-content {
+    color: var(--page-fg);
+}
+
+
+body {
+    background: var(--bg);
+    color: var(--page-fg);
+}
+
+/* --- Top Navbar Styling --- */
+.navbar {
+    height: 60px;
+    background-color: var(--navbar-bg);
+    color: var(--navbar-fg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    gap: 12px;
+}
+
+.theme-toggle {
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--navbar-fg);
+    border-radius: 6px;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle:hover {
+    border-color: rgba(255,255,255,0.9);
+}
+
+.theme-icon {
+    font-size: 18px;
+}
+
+
+
+/* Subtle border outline match to Amazon UI on hover */
+.border-hover {
+    border: 1px solid transparent;
+    padding: 6px 4px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.border-hover:hover {
+    border: 1px solid white;
+}
+
+/* Amazon Logo styling using CSS background image */
+.nav-logo {
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    background-image: url('https://pngimg.com/uploads/amazon/amazon_PNG11.png');
+    background-size: cover;
+    height: 33px;
+    width: 100px;
+    margin-top: 10px;
+}
+
+/* Address Styling */
+.nav-address {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.loc-icon {
+    font-size: 18px;
+    margin-right: 3px;
+    margin-top: 8px;
+}
+
+.add-first {
+    color: #cccccc;
+    font-size: 12px;
+}
+
+.add-second {
+    color: var(--navbar-fg);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+/* --- Search Bar Container --- */
+.nav-search {
+    display: flex;
+    flex-grow: 1;
+    height: 40px;
+    border-radius: 4px;
+    margin: 0 15px;
+    background-color: white;
+}
+
+.nav-search:focus-within {
+    box-shadow: 0 0 0 2px #f3a847, 0 0 0 3px rgba(243, 168, 71, 0.5);
+}
+
+/* Dropdown styling */
+.search-select-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #e6e6e6;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-right: 1px solid #cdcdcd;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.search-select-wrapper:hover {
+    background-color: #dadada;
+    color: #111;
+}
+
+.search-select {
+    appearance: none;
+    -webkit-appearance: none;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 12px;
+    color: #555;
+    padding-right: 15px;
+    cursor: pointer;
+    width:30px;
+}
+
+.select-caret {
+    position: absolute;
+    right: 8px;
+    font-size: 10px;
+    color: #555;
+    pointer-events: none;
+}
+
+/* Search input main text field */
+.search-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    padding-left: 10px;
+}
+
+/* Search Icon Wrapper button */
+.search-icon {
+    width: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    background-color: #febd69;
+    color: #333333;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.1s;
+}
+
+.search-icon:hover {
+    background-color: #f3a847;
+}
+
+/* Language selector */
+.nav-lang {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-right: 5px;
+}
+
+.flag-icon {
+    font-size: 18px;
+}
+
+.lang-text {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.caret {
+    font-size: 10px;
+    color: #adb1b8;
+    margin-top: 4px;
+}
+
+/* Accounts / Orders Common Text Layouts */
+.nav-first-line {
+    font-size: 12px;
+    color: #ffffff;
+}
+
+.nav-second-line {
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.nav-account, .nav-orders {
+    margin-right: 5px;
+}
+
+/* Shopping Cart styling */
+.nav-cart {
+    display: flex;
+    align-items: flex-end;
+    font-weight: 700;
+}
+
+.cart-icon-wrapper {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+}
+
+.cart-icon {
+    font-size: 26px;
+}
+
+.cart-count {
+    position: absolute;
+    left: 11px;
+    top: -5px;
+    background-color: transparent;
+    color: #f08804;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.cart-text {
+    font-size: 14px;
+    margin-left: 2px;
+    margin-bottom: 2px;
+}
+
+
+/* --- Secondary Bottom Panel Styling --- */
+.panel {
+    height: 40px;
+    background-color: var(--panel-bg);
+    color: var(--panel-fg);
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding: 20px;
+}
+
+
+.panel-all {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    gap: 5px;
+    font-size: 14px;
+}
+
+.panel-ops {
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.panel-ops p {
+    margin-left: 5px;
+}
+
+/* hero */
+html,
+body {
+    position: relative;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+swiper-container {
+    width: 100%;
+    height:550px;  
+    max-width: none !important;
+    /* display: block; */
+    margin: 0 auto 0 auto;
+    
+    /* Arrows aur Dots ka color handle karne ke liye variables */
+    --swiper-navigation-color: #111111;
+    --swiper-navigation-size: 35px;
+    --swiper-navigation-top: 50%;
+    --swiper-pagination-color: #111111;
+}
+
+swiper-slide {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 0 8%; */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Gradients */
+/* .slide-1 { background: linear-gradient(to bottom, #d98fff, #cc78ff); }
+.slide-2 { background: linear-gradient(to bottom, #a5f3fc, #06b6d4); }
+.slide-3 { background: linear-gradient(to bottom, #fed7aa, #ea580c); }
+.slide-4 { background: linear-gradient(to bottom, #bbf7d0, #16a34a); }
+.slide-5 { background: linear-gradient(to bottom, #fef08a, #ca8a04); } */
+
+/* Typography */
+ /* .slide-content {
+    color: var(--page-fg);
+    font-family: 'Arial Black', Arial, sans-serif;
+    text-align: left;
+} */
+
+
+/* .slide-content h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    margin: 0 0 5px 0;
+} */
+
+/* .slide-content p {
+    font-family: Arial, sans-serif;
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin: 0;
+} */
+
+/* Images Control */
+.slide-image {
+    height: 100%;
+    display: flex;
+    /* display: block; */
+    width: 100%;
+    /* align-items: flex-end; */
+    /* align-items: center; */
+}
+
+/* .slide-image img {
+    display: block;
+    height: 100% !important;
+    width: auto !important;
+    object-fit: contain !important;
+    transform: translateY(10px);
+}  */
+  .slide-image img {
+    display: block;
+    width: 100% !important;     /* Auto ki jagah 100% karein taake poori width cover ho */
+    height: 100% !important;    /* Height ko 100% hi rehne dein */
+     object-fit: cover !important;/* Isko un-comment karein taake image stretch na ho balkeh fit ho jaye
+    /* object-position: center;    Image ka main hissa hamesha center mein rahe ga  */
+    /* object-fit: contain !important; Isko contain karein taake poori image dikhayi de, crop na ho */
+    object-position: center top;
+}
+
+
+
+
+
+   /* card */
+/* Base Resets and Styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #eaeded;
+    /* padding: 20px; */
+    /* display: flex; */
+    justify-content: center;
+}
+
+.dashboard-container {
+    max-width: 1480px;
+    width: 100%;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Common Card Styling */
+.card {
+    background-color: #ffffff;
+    padding: 20px 20px 15px 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 420px;
+}
+
+h2 {
+    font-size: 21px;
+    font-weight: 700;
+    color: #0F1111;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.card-link {
+    color: #007185;
+    text-decoration: none;
+    font-size: 13px;
+    margin-top: auto;
+    padding-top: 15px;
+    width: fit-content;
+}
+
+.card-link:hover {
+    color: #C7511F;
+    text-decoration: underline;
+}
+
+/* Top 3-Column Layout Grid */
+.top-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* 2x2 Image Grids inside Cards */
+.grid-2x2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 15px;
+    margin-top: 5px;
+}
+
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.grid-item span, .triple-item span, .main-label {
+    font-size: 12px;
+    color: #0F1111;
+    margin-top: 6px;
+}
+
+.image-box {
+    height: 120px;
+    background-color: #f7f8f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.image-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Specific background styles based on image variants */
+.blue-bg {
+    background-color: #f0f8ff; /* Soft light blue background */
+}
+
+.pattern-bg {
+    background: linear-gradient(135deg, #e0f0ff 25%, #f0f8ff 25%, #f0f8ff 50%, #e0f0ff 50%, #e0f0ff 75%, #f0f8ff 75%, #f0f8ff 100%);
+    background-size: 20px 20px;
+}
+
+/* Kitchen Section Styles */
+.kitchen-card .main-featured-img {
+    height: 160px;
+    width: 100%;
+    background-color: #f7f8f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.kitchen-card .main-featured-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.main-label {
+    margin-bottom: 15px;
+}
+
+.triple-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.triple-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.image-box-sm {
+    height: 80px;
+    background-color: #f7f8f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.image-box-sm img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+
+/* Bottom Slider / Carousel Styles */
+.carousel-card {
+    background-color: #ffffff;
+    padding: 20px;
+    position: relative;
+}
+
+.carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.carousel-track-container {
+    width: 100%;
+    overflow-x: hidden;
+    padding: 10px 0;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 12px;
+    transition: transform 0.4s ease-in-out;
+    will-change: transform;
+}
+
+.carousel-item {
+    flex: 0 0 auto;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.carousel-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Carousel Overlay Navigation Buttons */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #d5d9d9;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    width: 45px;
+    height: 45px;
+    border-radius: 4px;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-btn:hover {
+    background-color: #f7fafa;
+}
+
+.prev-btn { left: -15px; }
+.next-btn { right: -15px; }
+
+
+ /* Naya background track jo poore div jitna wide hoga */
+.scrollbar-indicator-bg {
+    width: 100%; /* Poori width cover karega */
+    height: 4px;
+    background-color: #dddddd;
+    margin-top: 25px; /* Thoda gap badha diya slider se */
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Isme se transitions smooth rakhein aur width dynamic JavaScript handle karega */
+.scrollbar-indicator-bar {
+    height: 100%;
+    background-color: #444444;
+    border-radius: 2px;
+    position: absolute;
+    left: 0;
+    transition: left 0.3s ease-out, width 0.3s ease-out;
+}
+/* third */
+/* ==========================================
+   NEW FOUR COLUMN GRID SECTIONS (AMAZON LAYOUT)
+   ========================================== */
+
+.amazon-four-column-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Common Card Layout setup */
+.quad-product-card {
+    background-color: #ffffff;
+    padding: 20px 20px 15px 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 420px;
+    border-radius: 0px; /* Rigid modern square border like Amazon */
+}
+
+.quad-card-title {
+    font-size: 21px;
+    font-weight: 700;
+    color: #0F1111;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+/* 2x2 Image Internal Matrix */
+.quad-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 15px;
+}
+
+.quad-grid-item {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+/* Image background wrapper with precise padding & size adjustments */
+.quad-img-wrapper {
+    height: 120px;
+    background-color: #f7f8f8; /* Soft subtle Amazon grey */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Exact image alignments inside grids */
+.quad-img-wrapper img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.quad-img-wrapper:hover img {
+    transform: scale(1.03); /* Subtle sweet interactive scaling on grid hover */
+}
+
+/* Labels below grid boxes */
+.quad-item-label {
+    font-size: 12px;
+    color: #0F1111;
+    margin-top: 6px;
+    font-family: Arial, sans-serif;
+}
+
+/* Links at bottom of cards */
+.quad-card-footer-link {
+    color: #007185;
+    text-decoration: none;
+    font-size: 13px;
+    margin-top: auto;
+    padding-top: 15px;
+    width: fit-content;
+    font-family: Arial, sans-serif;
+}
+
+.quad-card-footer-link:hover {
+    color: #C7511F;
+    text-decoration: underline;
+}
+
+/* --- Dynamic Background Overlays (As seen in your screenshots) --- */
+
+/* slider */
+/* ==========================================
+   AMAZON CAROUSEL SLIDER STYLES (BEAUTY SLIDER)
+   ========================================== */
+
+/* Main wrapper jisme slider card poora pack hai */
+.carousel-card {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    border-radius: 0px; /* Amazon style authentic rigid edge */
+}
+
+.carousel-card h2 {
+    font-size: 21px;
+    font-weight: 700;
+    color: #0F1111;
+    margin-bottom: 10px;
+    font-family: Arial, sans-serif;
+}
+
+/* Wrapper jo track aur buttons ko hold karta hai */
+.carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* Container jo extra images ko overflow hidden rakhta hai */
+.carousel-track-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Actual row jo images ko lekar move karti hai */
+.carousel-track {
+    display: flex;
+    gap: 12px; /* Har image ke darmiyan spacing */
+    transition: transform 0.4s ease-in-out; /* Smooth sliding transition effect */
+    will-change: transform;
+}
+
+/* Individual Image Box setup */
+.carousel-item {
+    flex: 0 0 auto;
+    width: 200px; /* Perfect square/rectangular bound matching standard item width */
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+}
+
+/* Exact image handling so that high-quality links look pristine */
+.carousel-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain !important; /* Image scale hone par stretch nahi hogi */
+    cursor: pointer;
+}
+
+/* Navigation Left/Right Buttons styling */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.98);
+    border: 1px solid #D5D9D9;
+    box-shadow: 0 2px 5px rgba(213,217,217,0.5);
+    width: 40px;
+    height: 45px;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.carousel-btn:hover {
+    background-color: #F7FAFA;
+    border-color: #A6ECEF;
+}
+
+.prev-btn {
+    left: -15px; /* Box se halka sa baahar modern overlay effect */
+}
+
+.next-btn {
+    right: -15px;
+}
+
+/* --- BOTTOM LINE HORIZONTAL SCROLLBAR --- */
+.scrollbar-indicator-bg {
+    width: 100%;
+    height: 4px; /* Thin slick modern indicator track line */
+    background-color: #E2E6E6; /* Subtle grey bottom line background */
+    margin-top: 15px;
+    position: relative;
+    border-radius: 2px;
+}
+
+/* Moving Bar Handle controlled by JavaScript */
+.scrollbar-indicator-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #007185; /* Amazon classic deep cyan indicator thumb shade */
+    border-radius: 2px;
+    transition: left 0.3s ease-out, width 0.3s ease-out; /* Smooth slider track bar movement */
+}

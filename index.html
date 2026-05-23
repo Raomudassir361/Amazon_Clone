@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Navbar Clone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.responsive.css">
+</head>
+<body>
+
+    <header>
+        <div class="navbar">
+            <div class="nav-logo border-hover">
+                <div class="logo"></div>
+            </div>
+
+            <button class="theme-toggle border-hover" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
+                <i class="fa-solid fa-sun theme-icon" id="themeIcon"></i>
+            </button>
+
+
+            <div class="nav-address border-hover">
+                <i class="fa-solid fa-location-dot loc-icon"></i>  
+                <div class="address-text">
+                    <p class="add-first">Deliver to</p>
+                    <p class="add-second">Pakistan</p>
+                </div>
+            </div>
+
+            <div class="nav-search">
+                <div class="search-select-wrapper">
+                    <select class="search-select">
+                        <option>All</option>
+                        <option>Baby</option>
+                        <option>Men's Fashion</option>
+                        <option>Book</option>
+                        <option>Electronics</option>
+                        <option>Luggage</option>
+
+
+                    </select>
+                    <i class="fa-solid fa-caret-down select-caret"></i>
+                </div>
+                <input type="text" placeholder="Search Amazon" class="search-input">
+                <div class="search-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+
+            <div class="nav-lang border-hover">
+                <div class="flag-icon">🇺🇸</div>
+                <span class="lang-text">EN</span>
+                <i class="fa-solid fa-caret-down caret"></i>
+            </div>
+
+            <div class="nav-account border-hover">
+                <p class="nav-first-line">Hello, sign in</p>
+                <div class="nav-second-line">
+                    <span>Account & Lists</span>
+                    <i class="fa-solid fa-caret-down caret"></i>
+                </div>
+            </div>
+
+            <div class="nav-orders border-hover">
+                <p class="nav-first-line">Returns</p>
+                <p class="nav-second-line">& Orders</p>
+            </div>
+
+            <div class="nav-cart border-hover">
+                <div class="cart-icon-wrapper">
+                    <span class="cart-count">0</span>
+                    <i class="fa-solid fa-cart-shopping cart-icon"></i>
+                </div>
+                <span class="cart-text">Cart</span>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-all border-hover">
+                <i class="fa-solid fa-bars"></i>
+                <span>All</span>
+            </div>
+
+            <div class="panel-ops">
+                <p class="border-hover">Today's Deals</p>
+                <p class="border-hover">Gift Cards</p>
+                <p class="border-hover">Sell</p>
+                <p class="border-hover">Registry</p>
+                <p class="border-hover">Prime Video</p>
+                <p class="border-hover">Customer Service</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- hero-->
+<!-- <swiper-container class="mySwiper" css-mode="true"> -->
+    <swiper-container class="mySwiper" init="false" navigation="true" pagination="true">
+        
+        <swiper-slide class="slide-1">
+           
+            <div class="slide-image">
+                <img src="./assets/619geyiQI5L._SX3000_.jpg" alt="Kitchen" />
+            </div>
+        </swiper-slide>
+
+        <swiper-slide class="slide-2">
+           
+            <div class="slide-image">
+                <img src="./assets/61Yx5-N155L._SX3000_.jpg" alt="Beauty" />
+            </div>
+        </swiper-slide>
+
+        <swiper-slide class="slide-3">
+            <div class="slide-image">
+                <img src="./assets/71QcgptqadL._SX3000_.jpg" alt="Gaming" />
+            </div>
+        </swiper-slide>
+
+        <swiper-slide class="slide-4">
+          
+            <div class="slide-image">
+                <img src="./assets/71qcoYgEhzL._SX3000_.jpg" alt="Home" />
+            </div>
+        </swiper-slide>
+
+    
+
+    </swiper-container>
+
+
+
+       <!-- card -->
+       <div class="dashboard-container">
+        
+        <div class="top-grid">
+            
+            <div class="card grid-2x2-card">
+                <h2>Grilling must-haves for Dads</h2>
+                <div class="grid-2x2">
+                    <div class="grid-item">
+                        <div class="image-box"><img src="https://via.placeholder.com/150/eaf4fc/000000?text=Grilling+Pan" alt="Grilling pans"></div>
+                        <span>Grilling pans</span>
+                    </div>
+                    <div class="grid-item">
+                        <div class="image-box pattern-bg"><img src="https://via.placeholder.com/150/eaf4fc/000000?text=Apron" alt="Aprons"></div>
+                        <span>Aprons</span>
+                    </div>
+                    <div class="grid-item">
+                        <div class="image-box"><img src="https://via.placeholder.com/150/eaf4fc/000000?text=Tools" alt="Grilling tools"></div>
+                        <span>Grilling tools</span>
+                    </div>
+                    <div class="grid-item">
+                        <div class="image-box pattern-bg"><img src="https://via.placeholder.com/150/eaf4fc/000000?text=Gloves" alt="Gloves"></div>
+                        <span>Gloves</span>
+                    </div>
+                </div>
+                <a href="#" class="card-link">Shop Father's Day gifts</a>
+            </div>
+
+            <div class="card kitchen-card">
+                <h2>Top categories in Kitchen appliances</h2>
+                <div class="main-featured-img">
+                    <img src="https://via.placeholder.com/300x160/cccccc/000000?text=Cooker" alt="Cooker">
+                </div>
+                <span class="main-label">Cooker</span>
+                
+                <div class="triple-row">
+                    <div class="triple-item">
+                        <div class="image-box-sm"><img src="https://via.placeholder.com/80/eeeeee/000000?text=Coffee" alt="Coffee"></div>
+                        <span>Coffee</span>
+                    </div>
+                    <div class="triple-item">
+                        <div class="image-box-sm"><img src="https://via.placeholder.com/80/eeeeee/000000?text=Pots" alt="Pots and Pans"></div>
+                        <span>Pots and P...</span>
+                    </div>
+                    <div class="triple-item">
+                        <div class="image-box-sm"><img src="https://via.placeholder.com/80/eeeeee/000000?text=Kettle" alt="Kettles"></div>
+                        <span>Kettles</span>
+                    </div>
+                </div>
+                <a href="#" class="card-link">Explore all products in Kitchen</a>
+            </div>
+
+            <div class="card grid-2x2-card">
+                <h2>Shop Father's Day deals</h2>
+                <div class="grid-2x2">
+                    <div class="grid-item">
+                        <div class="image-box blue-bg"><img src="https://via.placeholder.com/150/bad7f2/000000?text=Apparel" alt="Apparel"></div>
+                        <span>Apparel</span>
+                    </div>
+                    <div class="grid-item">
+                        <div class="image-box blue-bg"><img src="https://via.placeholder.com/150/bad7f2/000000?text=Care" alt="Personal Care"></div>
+                        <span>Personal Care</span>
+                    </div>
+                    <div class="grid-item">
+                        <div class="image-box blue-bg"><img src="https://via.placeholder.com/150/bad7f2/000000?text=Tech" alt="Tech"></div>
+                        <span>Tech</span>
+                    </div>
+                    <div class="grid-item">
+                        <div class="image-box blue-bg"><img src="https://via.placeholder.com/150/bad7f2/000000?text=Shoes" alt="Shoes"></div>
+                        <span>Shoes</span>
+                    </div>
+                </div>
+                <a href="#" class="card-link">Explore more gifts</a>
+            </div>
+
+        </div>
+
+        <div class="carousel-card">
+            <h2>International top sellers in Home</h2>
+            
+            <div class="carousel-wrapper">
+                <button class="carousel-btn prev-btn" id="cardPrevBtn">&#10094;</button>
+                
+                <div class="carousel-track-container">
+                    <div class="carousel-track" id="carouselTrack">
+                        <div class="carousel-item"><img src="https://via.placeholder.com/180x200/ffffff/333333?text=Mattress+Encasement" alt="Mattress Encasement"></div>
+                        <div class="carousel-item"><img src="https://via.placeholder.com/180x200/ffffff/333333?text=Bath+Mat" alt="Bath Mat"></div>
+                        <div class="carousel-item"><img src="./assets/81deorstoEL._AC_SY200_.jpg" alt="Color Remover"></div>
+                        <div class="carousel-item"><img src="./assets/81deorstoEL._AC_SY200_.jpg" alt="Window Film"></div>
+                        <div class="carousel-item"><img src="https://via.placeholder.com/180x200/ffffff/333333?text=Acrylic+Markers" alt="Acrylic Markers"></div>
+                        <div class="carousel-item"><img src="https://via.placeholder.com/180x200/ffffff/333333?text=Storage+Box" alt="Storage Box"></div>
+                        <div class="carousel-item"><img src="https://via.placeholder.com/180x200/ffffff/333333?text=Desk+Organizer" alt="Desk Organizer"></div>
+                        <div class="carousel-item"><img src="https://via.placeholder.com/180x200/ffffff/333333?text=Desk+Organizer" alt="Desk Organizer"></div>
+                    </div>
+                </div>
+                
+                <button class="carousel-btn next-btn" id="nextBtn">&#10095;</button>
+            </div>
+            
+            <div class="scrollbar-indicator-bg">
+                <div class="scrollbar-indicator-bar" id="scrollBar"></div>
+            </div>
+        </div>
+        <!-- second slider --> 
+      <div class="carousel-card">
+    <h2>International top sellers in Home</h2>
+    
+    <div class="carousel-wrapper">
+        <button class="carousel-btn prev-btn" id="newCardPrevBtn">&#10094;</button>
+        
+        <div class="carousel-track-container">
+            <div class="carousel-track" id="newCarouselTrack">
+                <div class="carousel-item"><img src="./assets/81deorstoEL._AC_SY200_.jpg" alt="Mattress Encasement"></div>
+                <div class="carousel-item"><img src="./assets/81deorstoEL._AC_SY200_.jpg" alt="Bath Mat"></div>
+                <div class="carousel-item"><img src="https://via.placeholder.com/180x200/ffffff/333333?text=Color+Remover" alt="Color Remover"></div>
+                <div class="carousel-item"><img src="https://via.placeholder.com/180x200/ffffff/333333?text=Window+Film" alt="Window Film"></div>
+                <div class="carousel-item"><img src="https://via.placeholder.com/180x200/ffffff/333333?text=Acrylic+Markers" alt="Acrylic Markers"></div>
+                <div class="carousel-item"><img src="https://via.placeholder.com/180x200/ffffff/333333?text=Storage+Box" alt="Storage Box"></div>
+                <div class="carousel-item"><img src="https://via.placeholder.com/180x200/ffffff/333333?text=Desk+Organizer" alt="Desk Organizer"></div>
+                <div class="carousel-item"><img src="https://via.placeholder.com/180x200/ffffff/333333?text=Desk+Organizer" alt="Desk Organizer"></div>
+            </div>
+        </div>
+        
+        <button class="carousel-btn next-btn" id="newCardNextBtn">&#10095;</button>
+    </div>
+    
+    <div class="scrollbar-indicator-bg">
+        <div class="scrollbar-indicator-bar" id="newScrollBar"></div>
+    </div>
+</div>
+<!-- third  -->
+ <div class="amazon-four-column-grid">
+
+    <div class="quad-product-card">
+        <h2 class="quad-card-title">Gaming merchandise</h2>
+        <div class="quad-grid-container">
+            <div class="quad-grid-item">
+                <div class="quad-img-wrapper">
+                    <img src="https://m.media-amazon.com/images/I/611Ww8S76SL._AC_SY135_.jpg" alt="Apparel">
+                </div>
+                <span class="quad-item-label">Apparel</span>
+            </div>
+            <div class="quad-grid-item">
+                <div class="quad-img-wrapper">
+                    <img src="https://m.media-amazon.com/images/I/618qInSPhDL._AC_SY135_.jpg" alt="Hats">
+                </div>
+                <span class="quad-item-label">Hats</span>
+            </div>
+            <div class="quad-grid-item">
+                <div class="quad-img-wrapper">
+                    <img src="https://m.media-amazon.com/images/I/61Kx897qfFL._AC_SY135_.jpg" alt="Action figures">
+                </div>
+                <span class="quad-item-label">Action figures</span>
+            </div>
+            <div class="quad-grid-item">
+                <div class="quad-img-wrapper">
+                    <img src="https://m.media-amazon.com/images/I/71Y8K86fT9L._AC_SY135_.jpg" alt="Mugs">
+                </div>
+                <span class="quad-item-label">Mugs</span>
+            </div>
+        </div>
+        <a href="#" class="quad-card-footer-link">See more</a>
+    </div>
+
+    <div class="quad-product-card">
+        <h2 class="quad-card-title">Most-loved travel essentials</h2>
+        <div class="quad-grid-container">
+            <div class="quad-grid-item">
+                <div class="quad-img-wrapper sage-bg">
+                    <img src="https://m.media-amazon.com/images/I/81+XOfIqf6L._AC_SY135_.jpg" alt="Backpacks">
+                </div>
+                <span class="quad-item-label">Backpacks</span>
+            </div>
+            <div class="quad-grid-item">
+                <div class="quad-img-wrapper sage-bg">
+                    <img src="https://m.media-amazon.com/images/I/713Nls96pHL._AC_SY135_.jpg" alt="Suitcases">
+                </div>
+                <span class="quad-item-label">Suitcases</span>
+            </div>
+            <div class="quad-grid-item">
+                <div class="quad-img-wrapper sage-bg">
+                    <img src="https://m.media-amazon.com/images/I/71wZ3K+Zg0L._AC_SY135_.jpg" alt="Accessories">
+                </div>
+                <span class="quad-item-label">Accessories</span>
+            </div>
+            <div class="quad-grid-item">
+                <div class="quad-img-wrapper sage-bg">
+                    <img src="https://m.media-amazon.com/images/I/71oDclZ84vL._AC_SY135_.jpg" alt="Handbags">
+                </div>
+                <span class="quad-item-label">Handbags</span>
+            </div>
+        </div>
+        <a href="#" class="quad-card-footer-link">Discover more</a>
+    </div>
+
+    <div class="quad-product-card">
+        <h2 class="quad-card-title">Have more fun with family</h2>
+        <div class="quad-grid-container">
+            <div class="quad-grid-item">
+                <div class="quad-img-wrapper peach-bg">
+                    <img src="https://m.media-amazon.com/images/I/61NcoS7Xv8L._AC_SY135_.jpg" alt="Outdoor Play Sets">
+                </div>
+                <span class="quad-item-label">Outdoor Play Sets</span>
+            </div>
+            <div class="quad-grid-item">
+                <div class="quad-img-wrapper peach-bg">
+                    <img src="https://m.media-amazon.com/images/I/71b9rS9X6PL._AC_SY135_.jpg" alt="Learning Toys">
+                </div>
+                <span class="quad-item-label">Learning Toys</span>
+            </div>
+            <div class="quad-grid-item">
+                <div class="quad-img-wrapper peach-bg">
+                    <img src="https://m.media-amazon.com/images/I/719F84pQ4SL._AC_SY135_.jpg" alt="Action Figures">
+                </div>
+                <span class="quad-item-label">Action Figures</span>
+            </div>
+            <div class="quad-grid-item">
+                <div class="quad-img-wrapper peach-bg">
+                    <img src="https://m.media-amazon.com/images/I/81R6v9t-VLL._AC_SY135_.jpg" alt="Pretend Play Toys">
+                </div>
+                <span class="quad-item-label">Pretend Play Toys</span>
+            </div>
+        </div>
+        <a href="#" class="quad-card-footer-link">See more</a>
+    </div>
+
+    <div class="quad-product-card">
+        <h2 class="quad-card-title">Most-loved watches</h2>
+        <div class="quad-grid-container">
+            <div class="quad-grid-item">
+                <div class="quad-img-wrapper watch-bg">
+                    <img src="https://m.media-amazon.com/images/I/716bO7m8K7L._AC_SY135_.jpg" alt="Women">
+                </div>
+                <span class="quad-item-label">Women</span>
+            </div>
+            <div class="quad-grid-item">
+                <div class="quad-img-wrapper watch-bg">
+                    <img src="https://m.media-amazon.com/images/I/71vU+Nq8g2L._AC_SY135_.jpg" alt="Men">
+                </div>
+                <span class="quad-item-label">Men</span>
+            </div>
+            <div class="quad-grid-item">
+                <div class="quad-img-wrapper watch-bg">
+                    <img src="https://m.media-amazon.com/images/I/81p-ZlHby7L._AC_SY135_.jpg" alt="Girls">
+                </div>
+                <span class="quad-item-label">Girls</span>
+            </div>
+            <div class="quad-grid-item">
+                <div class="quad-img-wrapper watch-bg">
+                    <img src="https://m.media-amazon.com/images/I/71t4S88qXNL._AC_SY135_.jpg" alt="Boys">
+                </div>
+                <span class="quad-item-label">Boys</span>
+            </div>
+        </div>
+        <a href="#" class="quad-card-footer-link">Discover more</a>
+    </div>
+
+</div>
+<!-- slider -->
+ <div class="carousel-card">
+    <h2>Popular products in Beauty internationally</h2>
+    
+    <div class="carousel-wrapper">
+        <button class="carousel-btn prev-btn" id="beautyCardPrevBtn">&#10094;</button>
+        
+        <div class="carousel-track-container">
+            <div class="carousel-track" id="beautyCarouselTrack">
+                <div class="carousel-item">
+                    <img src="./assets/81deorstoEL._AC_SY200_.jpg" alt="Eucerin Baby Wash">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/81deorstoEL._AC_SY200_.jpg" alt="Colgate Wisp">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://m.media-amazon.com/images/I/61k09pBwUvL._AC_SY200_.jpg" alt="eos Body Lotion Lavender">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://m.media-amazon.com/images/I/61S2XGZ9qyL._AC_SY200_.jpg" alt="eos Body Lotion Coconut">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://m.media-amazon.com/images/I/51w7Y6RreYL._AC_SY200_.jpg" alt="Anua Cream">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://m.media-amazon.com/images/I/516mD15E5LL._AC_SY200_.jpg" alt="Skincare Device Set">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://m.media-amazon.com/images/I/518Vw5K6ZQL._AC_SY200_.jpg" alt="Pink Wand">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://m.media-amazon.com/images/I/71bZg6SgY9L._AC_SY200_.jpg" alt="Just For Men">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://m.media-amazon.com/images/I/617F9D66r-L._AC_SY200_.jpg" alt="Neutrogena Sunscreen">
+                </div>
+            </div>
+        </div>
+        
+        <button class="carousel-btn next-btn" id="beautyCardNextBtn">&#10095;</button>
+    </div>
+    
+    <div class="scrollbar-indicator-bg">
+        <div class="scrollbar-indicator-bar" id="beautyScrollBar"></div>
+    </div>
+</div>
+<!-- slider -->
+ <div class="carousel-card">
+    <h2>International top sellers in Kitchen</h2>
+    
+    <div class="carousel-wrapper">
+        <button class="carousel-btn prev-btn" id="kitchenCardPrevBtn">&#10094;</button>
+        
+        <div class="carousel-track-container">
+            <div class="carousel-track" id="kitchenCarouselTrack">
+                <div class="carousel-item">
+                    <img src="./assets/81deorstoEL._AC_SY200_.jpg" alt="Kitchen Item 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://m.media-amazon.com/images/I/71m8K12mK5L._AC_SY200_.jpg" alt="Kitchen Item 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://m.media-amazon.com/images/I/71Y8R+fT9LL._AC_SY200_.jpg" alt="Kitchen Item 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://m.media-amazon.com/images/I/61tYvD66r-L._AC_SY200_.jpg" alt="Kitchen Item 4">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://m.media-amazon.com/images/I/81+XOfIqf6L._AC_SY200_.jpg" alt="Kitchen Item 5">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://m.media-amazon.com/images/I/71vU+Nq8g2L._AC_SY200_.jpg" alt="Kitchen Item 6">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://m.media-amazon.com/images/I/71b9rS9X6PL._AC_SY200_.jpg" alt="Kitchen Item 7">
+                </div>
+            </div>
+        </div>
+        
+        <button class="carousel-btn next-btn" id="kitchenCardNextBtn">&#10095;</button>
+    </div>
+    
+    <div class="scrollbar-indicator-bg">
+        <div class="scrollbar-indicator-bar" id="kitchenScrollBar"></div>
+    </div>
+</div>
+<!-- fourth -->
+  <div class="amazon-four-column-grid">
+
+    <div class="quad-product-card">
+        <h2 class="quad-card-title">Gaming merchandise</h2>
+        <div class="quad-grid-container">
+            <div class="quad-grid-item">
+                <div class="quad-img-wrapper">
+                    <img src="https://m.media-amazon.com/images/I/611Ww8S76SL._AC_SY135_.jpg" alt="Apparel">
+                </div>
+                <span class="quad-item-label">Apparel</span>
+            </div>
+            <div class="quad-grid-item">
+                <div class="quad-img-wrapper">
+                    <img src="https://m.media-amazon.com/images/I/618qInSPhDL._AC_SY135_.jpg" alt="Hats">
+                </div>
+                <span class="quad-item-label">Hats</span>
+            </div>
+            <div class="quad-grid-item">
+                <div class="quad-img-wrapper">
+                    <img src="https://m.media-amazon.com/images/I/61Kx897qfFL._AC_SY135_.jpg" alt="Action figures">
+                </div>
+                <span class="quad-item-label">Action figures</span>
+            </div>
+            <div class="quad-grid-item">
+                <div class="quad-img-wrapper">
+                    <img src="https://m.media-amazon.com/images/I/71Y8K86fT9L._AC_SY135_.jpg" alt="Mugs">
+                </div>
+                <span class="quad-item-label">Mugs</span>
+            </div>
+        </div>
+        <a href="#" class="quad-card-footer-link">See more</a>
+    </div>
+
+    <div class="quad-product-card">
+        <h2 class="quad-card-title">Most-loved travel essentials</h2>
+        <div class="quad-grid-container">
+            <div class="quad-grid-item">
+                <div class="quad-img-wrapper sage-bg">
+                    <img src="https://m.media-amazon.com/images/I/81+XOfIqf6L._AC_SY135_.jpg" alt="Backpacks">
+                </div>
+                <span class="quad-item-label">Backpacks</span>
+            </div>
+            <div class="quad-grid-item">
+                <div class="quad-img-wrapper sage-bg">
+                    <img src="https://m.media-amazon.com/images/I/713Nls96pHL._AC_SY135_.jpg" alt="Suitcases">
+                </div>
+                <span class="quad-item-label">Suitcases</span>
+            </div>
+            <div class="quad-grid-item">
+                <div class="quad-img-wrapper sage-bg">
+                    <img src="https://m.media-amazon.com/images/I/71wZ3K+Zg0L._AC_SY135_.jpg" alt="Accessories">
+                </div>
+                <span class="quad-item-label">Accessories</span>
+            </div>
+            <div class="quad-grid-item">
+                <div class="quad-img-wrapper sage-bg">
+                    <img src="https://m.media-amazon.com/images/I/71oDclZ84vL._AC_SY135_.jpg" alt="Handbags">
+                </div>
+                <span class="quad-item-label">Handbags</span>
+            </div>
+        </div>
+        <a href="#" class="quad-card-footer-link">Discover more</a>
+    </div>
+
+    <div class="quad-product-card">
+        <h2 class="quad-card-title">Have more fun with family</h2>
+        <div class="quad-grid-container">
+            <div class="quad-grid-item">
+                <div class="quad-img-wrapper peach-bg">
+                    <img src="https://m.media-amazon.com/images/I/61NcoS7Xv8L._AC_SY135_.jpg" alt="Outdoor Play Sets">
+                </div>
+                <span class="quad-item-label">Outdoor Play Sets</span>
+            </div>
+            <div class="quad-grid-item">
+                <div class="quad-img-wrapper peach-bg">
+                    <img src="https://m.media-amazon.com/images/I/71b9rS9X6PL._AC_SY135_.jpg" alt="Learning Toys">
+                </div>
+                <span class="quad-item-label">Learning Toys</span>
+            </div>
+            <div class="quad-grid-item">
+                <div class="quad-img-wrapper peach-bg">
+                    <img src="https://m.media-amazon.com/images/I/719F84pQ4SL._AC_SY135_.jpg" alt="Action Figures">
+                </div>
+                <span class="quad-item-label">Action Figures</span>
+            </div>
+            <div class="quad-grid-item">
+                <div class="quad-img-wrapper peach-bg">
+                    <img src="https://m.media-amazon.com/images/I/81R6v9t-VLL._AC_SY135_.jpg" alt="Pretend Play Toys">
+                </div>
+                <span class="quad-item-label">Pretend Play Toys</span>
+            </div>
+        </div>
+        <a href="#" class="quad-card-footer-link">See more</a>
+    </div>
+
+    <div class="quad-product-card">
+        <h2 class="quad-card-title">Most-loved watches</h2>
+        <div class="quad-grid-container">
+            <div class="quad-grid-item">
+                <div class="quad-img-wrapper watch-bg">
+                    <img src="https://m.media-amazon.com/images/I/716bO7m8K7L._AC_SY135_.jpg" alt="Women">
+                </div>
+                <span class="quad-item-label">Women</span>
+            </div>
+            <div class="quad-grid-item">
+                <div class="quad-img-wrapper watch-bg">
+                    <img src="https://m.media-amazon.com/images/I/71vU+Nq8g2L._AC_SY135_.jpg" alt="Men">
+                </div>
+                <span class="quad-item-label">Men</span>
+            </div>
+            <div class="quad-grid-item">
+                <div class="quad-img-wrapper watch-bg">
+                    <img src="https://m.media-amazon.com/images/I/81p-ZlHby7L._AC_SY135_.jpg" alt="Girls">
+                </div>
+                <span class="quad-item-label">Girls</span>
+            </div>
+            <div class="quad-grid-item">
+                <div class="quad-img-wrapper watch-bg">
+                    <img src="https://m.media-amazon.com/images/I/71t4S88qXNL._AC_SY135_.jpg" alt="Boys">
+                </div>
+                <span class="quad-item-label">Boys</span>
+            </div>
+        </div>
+        <a href="#" class="quad-card-footer-link">Discover more</a>
+    </div>
+
+</div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-element-bundle.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
