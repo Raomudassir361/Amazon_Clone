@@ -1,0 +1,185 @@
+/* Responsive additions for the Amazon-like clone.
+   Note: main styling lives in style.css; this file overrides at breakpoints.
+*/
+
+/* Mobile-first improvements */
+@media (max-width: 900px) {
+  .navbar {
+    padding: 0 10px;
+    gap: 8px;
+    height: 56px;
+    flex-wrap: wrap;
+  }
+
+  /* Shrink logo and search on tablets */
+  .logo {
+    width: 85px;
+    height: 28px;
+    margin-top: 6px;
+  }
+
+  .nav-search {
+    margin: 0 8px;
+    min-width: 220px;
+  }
+
+  /* Reduce gaps in text blocks */
+  .nav-address,
+  .nav-lang,
+  .nav-orders {
+    display: none;
+  }
+
+  /* Keep account/cart/theme visible */
+  .nav-account,
+  .nav-cart,
+  .theme-toggle {
+    flex: 0 0 auto;
+  }
+
+  swiper-container {
+    height: 420px;
+  }
+
+  /* Make grids breathe */
+  .dashboard-container {
+    margin-left: 0;
+    padding: 0 10px;
+  }
+
+  .card,
+  .quad-product-card,
+  .carousel-card,
+  .electronics-card-container {
+    padding: 14px;
+  }
+
+  /* Reduce internal image boxes */
+  .image-box { height: 96px; }
+  .image-box-sm { height: 70px; }
+  .grid-2x2 { gap: 10px; }
+
+  .quad-img-wrapper { height: 96px; }
+
+  /* Carousels: smaller item cards */
+  .carousel-item,
+  .electronics-product-item {
+    width: 160px;
+    height: 160px;
+  }
+
+  /* Slider buttons closer to edges */
+  .carousel-btn.prev-btn { left: -6px; }
+  .carousel-btn.next-btn { right: -6px; }
+  .electronics-left-arrow { left: -6px; }
+  .electronics-right-arrow { right: -6px; }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    height: auto;
+    min-height: 56px;
+  }
+
+  /* Show only: logo + search + theme toggle + cart */
+  .nav-logo { flex: 0 0 auto; }
+  .nav-address,
+  .nav-orders,
+  .nav-account,
+  .nav-lang {
+    display: none;
+  }
+
+  .nav-search {
+    flex: 1 1 auto;
+    min-width: 0;
+    margin: 0 8px;
+  }
+
+  .search-select-wrapper {
+    padding: 0 8px;
+  }
+  .search-select { width: 22px; }
+
+  .panel {
+    height: 36px;
+    padding: 0 10px;
+  }
+
+  .panel-ops {
+    display: none;
+  }
+
+  swiper-container {
+    height: 320px;
+  }
+
+  /* Reduce typography */
+  h2 {
+    font-size: 18px;
+  }
+
+  .dashboard-container {
+    padding: 0 8px;
+  }
+
+  .top-grid {
+    gap: 14px;
+  }
+
+  .card,
+  .quad-product-card,
+  .carousel-card,
+  .electronics-card-container {
+    padding: 12px;
+    min-height: auto;
+  }
+
+  .grid-2x2 {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .triple-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .image-box { height: 86px; }
+  .image-box-sm { height: 64px; }
+
+  .quad-grid-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .quad-img-wrapper { height: 86px; }
+
+  /* Carousels: smaller */
+  .carousel-item,
+  .electronics-product-item {
+    width: 138px;
+    height: 138px;
+  }
+
+  .carousel-wrapper,
+  .carousel-track-container,
+  .electronics-slider-frame {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  /* Buttons */
+  .carousel-btn { width: 36px; height: 40px; }
+  .carousel-btn.prev-btn { left: -4px; }
+  .carousel-btn.next-btn { right: -4px; }
+  .electronics-arrow-btn { width: 36px; height: 40px; }
+  .electronics-left-arrow { left: -4px; }
+  .electronics-right-arrow { right: -4px; }
+
+  /* Sub-footer grid */
+  .sub-footer-grid-wrapper {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+}
+

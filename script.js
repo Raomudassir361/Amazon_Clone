@@ -1,326 +1,13 @@
-// // // Swiper container ko HTML se select kiya
-// // const swiperEl = document.querySelector('swiper-container');
 
-// // // Swiper ki settings object ke zariye initialize ki
-// // const swiperParams = {
-// //     loop: true,          // Infinite loop fix karne ke liye true
-// //     navigation: true,    // Arrows toggle active
-// //     pagination: true,    // Dots active
-// //     keyboard: true,      // Keyboard arrows control
-// //     mousewheel: true,    // Scroll wheel control
-// // };
-
-
-
-// // // Settings ko swiper element par apply kar diya
-// // Object.assign(swiperEl, swiperParams);
-
-// // // Swiper ko initialize kiya
-// // swiperEl.initialize();
-
-// // // --- Dark mode toggle ---
-// // const themeToggleBtn = document.getElementById('themeToggle');
-// // const themeIcon = document.getElementById('themeIcon');
-
-// // function applyTheme(theme) {
-// //     const isDark = theme === 'dark';
-// //     document.body.classList.toggle('dark', isDark);
-
-// //     if (themeIcon) {
-// //         themeIcon.classList.toggle('fa-sun', !isDark);
-// //         themeIcon.classList.toggle('fa-moon', isDark);
-// //     }
-// // }
-
-// // function getInitialTheme() {
-// //     const saved = localStorage.getItem('theme');
-// //     if (saved === 'dark' || saved === 'light') return saved;
-
-// //     // Fallback to system preference
-// //     const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-// //     return prefersDark ? 'dark' : 'light';
-// // }
-
-// // applyTheme(getInitialTheme());
-
-// // if (themeToggleBtn) {
-// //     themeToggleBtn.addEventListener('click', () => {
-// //         const next = document.body.classList.contains('dark') ? 'light' : 'dark';
-// //         localStorage.setItem('theme', next);
-// //         applyTheme(next);
-// //     });
-// // }
-// // //  slider
-// // const track = document.getElementById('sliderTrack');
-// // const prevBtn = document.getElementById('prevBtn');
-// // const nextBtn = document.getElementById('nextBtn');
-// // const thumb = document.getElementById('scrollThumb');
-
-// // const getScrollAmount = () => track.clientWidth * 0.75;
-
-// // nextBtn.addEventListener('click', () => {
-// //   track.scrollLeft += getScrollAmount();
-// // });
-
-// // prevBtn.addEventListener('click', () => {
-// //   track.scrollLeft -= getScrollAmount();
-// // });
-
-// // const updateScrollbar = () => {
-// //   const scrollPercentage = track.scrollLeft / (track.scrollWidth - track.clientWidth);
-// //   const thumbWidthPercentage = (track.clientWidth / track.scrollWidth) * 100;
-  
-// //   thumb.style.width = `${thumbWidthPercentage}%`;
-  
-// //   const maxLeft = 100 - thumbWidthPercentage;
-// //   thumb.style.left = `${scrollPercentage * maxLeft}%`;
-// // };
-
-// // track.addEventListener('scroll', updateScrollbar);
-// // window.addEventListener('resize', updateScrollbar);
-
-// // updateScrollbar();
-// // //    card
-
-// // document.addEventListener('DOMContentLoaded', () => {
-// //     const track = document.getElementById('carouselTrack');
-// //     const prevBtn = document.getElementById('prevBtn');
-// //     const nextBtn = document.getElementById('nextBtn');
-// //     const scrollBar = document.getElementById('scrollBar');
-// //     const indicatorBg = document.querySelector('.scrollbar-indicator-bg');
-
-// //     let currentIndex = 0;
-// //     const itemWidth = 212; // 200px image width + 12px gap
-// //     const totalItems = track.children.length;
-
-// //     function updateCarousel() {
-// //         const containerWidth = track.parentElement.offsetWidth;
-// //         const visibleItems = Math.floor(containerWidth / itemWidth);
-// //         const maxIndex = Math.max(0, totalItems - visibleItems);
-
-// //         // Boundaries secure karein
-// //         if (currentIndex < 0) currentIndex = 0;
-// //         if (currentIndex > maxIndex) currentIndex = maxIndex;
-
-// //         // Slider track ko move karein
-// //         const amountToMove = -currentIndex * itemWidth;
-// //         track.style.transform = `translateX(${amountToMove}px)`;
-
-// //         // --- POORE DIV WIDE SCROLLBAR LOGIC ---
-// //         const bgWidth = indicatorBg.offsetWidth; // Yeh ab poore div ki width nikalega
-        
-// //         // Bar ki width screen size ke hisab se select hogi (e.g., agar 50% items screen par hain toh bar 50% wide hogi)
-// //         const barWidth = (visibleItems / totalItems) * bgWidth;
-// //         const finalBarWidth = Math.min(bgWidth, Math.max(30, barWidth)); 
-        
-// //         scrollBar.style.width = `${finalBarWidth}px`;
-
-// //         // Bar ko smoothly aage piche move karne ke liye
-// //         if (maxIndex > 0) {
-// //             const scrollableWidth = bgWidth - finalBarWidth;
-// //             const progress = currentIndex / maxIndex;
-// //             scrollBar.style.left = `${progress * scrollableWidth}px`;
-// //         } else {
-// //             scrollBar.style.left = '0px';
-// //         }
-// //     }
-
-// //     nextBtn.addEventListener('click', () => {
-// //         const containerWidth = track.parentElement.offsetWidth;
-// //         const visibleItems = Math.floor(containerWidth / itemWidth);
-// //         const maxIndex = totalItems - visibleItems;
-
-// //         if (currentIndex < maxIndex) {
-// //             currentIndex += 2; // Next karne par 2 items aage
-// //             updateCarousel();
-// //         }
-// //     });
-
-// //     prevBtn.addEventListener('click', () => {
-// //         if (currentIndex > 0) {
-// //             currentIndex -= 2; // Prev karne par 2 items peeche
-// //             updateCarousel();
-// //         }
-// //     });
-
-// //     // Screen resize hone par scrollbar aur slider responsive khud adjust honge
-// //     window.addEventListener('resize', updateCarousel);
-// //     updateCarousel(); 
-// // });
-
-// // ==========================================
-// // 1. SWIPER CONFIGURATION
-// // ==========================================
-// const swiperEl = document.querySelector('swiper-container');
-
-// if (swiperEl) {
-//     const swiperParams = {
-//         loop: true,        // Infinite loop true
-//         navigation: true,  // Arrows active
-//         pagination: true,  // Dots active
-//         keyboard: true,    // Keyboard arrows control
-//         mousewheel: true,  // Scroll wheel control
-//     };
-
-//     Object.assign(swiperEl, swiperParams);
-//     swiperEl.initialize();
-// }
-
-// // ==========================================
-// // 2. DARK MODE TOGGLE
-// // ==========================================
-// const themeToggleBtn = document.getElementById('themeToggle');
-// const themeIcon = document.getElementById('themeIcon');
-
-// function applyTheme(theme) {
-//     const isDark = theme === 'dark';
-//     document.body.classList.toggle('dark', isDark);
-
-//     if (themeIcon) {
-//         themeIcon.classList.toggle('fa-sun', !isDark);
-//         themeIcon.classList.toggle('fa-moon', isDark);
-//     }
-// }
-
-// function getInitialTheme() {
-//     const saved = localStorage.getItem('theme');
-//     if (saved === 'dark' || saved === 'light') return saved;
-
-//     const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-//     return prefersDark ? 'dark' : 'light';
-// }
-
-// applyTheme(getInitialTheme());
-
-// if (themeToggleBtn) {
-//     themeToggleBtn.addEventListener('click', () => {
-//         const next = document.body.classList.contains('dark') ? 'light' : 'dark';
-//         localStorage.setItem('theme', next);
-//         applyTheme(next);
-//     });
-// }
-
-// // ==========================================
-// // 3. FIRST SLIDER (Scroll Track Slider)
-// // ==========================================
-// const track = document.getElementById('sliderTrack');
-// const prevBtn = document.getElementById('prevBtn');
-// const nextBtn = document.getElementById('nextBtn');
-// const thumb = document.getElementById('scrollThumb');
-
-// if (track && prevBtn && nextBtn) {
-//     const getScrollAmount = () => track.clientWidth * 0.75;
-
-//     nextBtn.addEventListener('click', () => {
-//         track.scrollLeft += getScrollAmount();
-//     });
-
-//     prevBtn.addEventListener('click', () => {
-//         track.scrollLeft -= getScrollAmount();
-//     });
-
-//     const updateScrollbar = () => {
-//         if (!thumb) return;
-//         const scrollPercentage = track.scrollLeft / (track.scrollWidth - track.clientWidth);
-//         const thumbWidthPercentage = (track.clientWidth / track.scrollWidth) * 100;
-        
-//         thumb.style.width = `${thumbWidthPercentage}%`;
-        
-//         const maxLeft = 100 - thumbWidthPercentage;
-//         thumb.style.left = `${scrollPercentage * maxLeft}%`;
-//     };
-
-//     track.addEventListener('scroll', updateScrollbar);
-//     window.addEventListener('resize', updateScrollbar);
-//     updateScrollbar();
-// }
-
-// // ==========================================
-// // 4. LAST CARD SLIDER (Fixed Conflicts)
-// // ==========================================
-// document.addEventListener('DOMContentLoaded', () => {
-//     const cardTrack = document.getElementById('carouselTrack');
-//     // Unique IDs se select kiya taaki upar wale slider se takraaye na
-//     const cardPrevBtn = document.getElementById('cardPrevBtn') || document.getElementById('prevBtn'); 
-//     const cardNextBtn = document.getElementById('cardNextBtn') || document.getElementById('nextBtn'); 
-//     const scrollBar = document.getElementById('scrollBar');
-//     const indicatorBg = document.querySelector('.scrollbar-indicator-bg');
-
-//     if (!cardTrack || !indicatorBg || !scrollBar) return;
-
-//     let currentIndex = 0;
-//     const itemWidth = 212; // 200px image width + 12px gap
-//     const totalItems = cardTrack.children.length;
-
-//     function updateCarousel() {
-//         const containerWidth = cardTrack.parentElement.offsetWidth;
-//         const visibleItems = Math.floor(containerWidth / itemWidth);
-//         const maxIndex = Math.max(0, totalItems - visibleItems);
-
-//         // Boundaries secure karein
-//         if (currentIndex < 0) currentIndex = 0;
-//         if (currentIndex > maxIndex) currentIndex = maxIndex;
-
-//         // Slider track ko move karein
-//         const amountToMove = -currentIndex * itemWidth;
-//         cardTrack.style.transform = `translateX(${amountToMove}px)`;
-
-//         // Full width scrollbar logic
-//         const bgWidth = indicatorBg.offsetWidth; 
-//         const barWidth = (visibleItems / totalItems) * bgWidth;
-//         const finalBarWidth = Math.min(bgWidth, Math.max(30, barWidth)); 
-        
-//         scrollBar.style.width = `${finalBarWidth}px`;
-
-//         if (maxIndex > 0) {
-//             const scrollableWidth = bgWidth - finalBarWidth;
-//             const progress = currentIndex / maxIndex;
-//             scrollBar.style.left = `${progress * scrollableWidth}px`;
-//         } else {
-//             scrollBar.style.left = '0px';
-//         }
-//     }
-
-//     if (cardNextBtn) {
-//         cardNextBtn.addEventListener('click', () => {
-//             const containerWidth = cardTrack.parentElement.offsetWidth;
-//             const visibleItems = Math.floor(containerWidth / itemWidth);
-//             const maxIndex = totalItems - visibleItems;
-
-//             if (currentIndex < maxIndex) {
-//                 currentIndex += 2; // Next par 2 items aage
-//                 updateCarousel();
-//             }
-//         });
-//     }
-
-//     if (cardPrevBtn) {
-//         cardPrevBtn.addEventListener('click', () => {
-//             if (currentIndex > 0) {
-//                 currentIndex -= 2; // Prev par 2 items peeche
-//                 updateCarousel();
-//             }
-//         });
-//     }
-
-//     window.addEventListener('resize', updateCarousel);
-//     updateCarousel(); 
-// });
-
-
-
-// ==========================================
-// 1. SWIPER CONFIGURATION
-// ==========================================
 const swiperEl = document.querySelector('swiper-container');
 
 if (swiperEl) {
     const swiperParams = {
-        loop: true,        
-        navigation: true,  
-        pagination: true,  
-        keyboard: true,    
-        mousewheel: true,  
+        loop: true,
+        navigation: true,
+        pagination: true,
+        keyboard: true,
+        mousewheel: true,
     };
 
     Object.assign(swiperEl, swiperParams);
@@ -384,9 +71,9 @@ if (track && prevBtn && nextBtn) {
         if (!thumb) return;
         const scrollPercentage = track.scrollLeft / (track.scrollWidth - track.clientWidth);
         const thumbWidthPercentage = (track.clientWidth / track.scrollWidth) * 100;
-        
+
         thumb.style.width = `${thumbWidthPercentage}%`;
-        
+
         const maxLeft = 100 - thumbWidthPercentage;
         thumb.style.left = `${scrollPercentage * maxLeft}%`;
     };
@@ -401,15 +88,32 @@ if (track && prevBtn && nextBtn) {
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
     const cardTrack = document.getElementById('carouselTrack');
-    const cardPrevBtn = document.getElementById('cardPrevBtn'); 
-    const cardNextBtn = document.getElementById('nextBtn'); 
+    const cardPrevBtn = document.getElementById('cardPrevBtn');
+    const cardNextBtn = document.getElementById('nextBtn');
     const scrollBar = document.getElementById('scrollBar');
     const indicatorBg = document.querySelector('.scrollbar-indicator-bg');
 
     if (!cardTrack || !indicatorBg || !scrollBar) return;
 
     let currentIndex = 0;
-    const itemWidth = 212; 
+
+    // Use actual rendered item width (CSS can change at breakpoints)
+    const getItemWidth = () => {
+        const firstItem = cardTrack.children[0];
+        if (!firstItem) return 212;
+        const style = window.getComputedStyle(firstItem);
+        const gap = parseFloat(style.marginRight) || 0;
+        // Track uses CSS flex gap; add it by reading computed gap from parent.
+        const gapFromTrack = (() => {
+            const trackStyle = window.getComputedStyle(cardTrack);
+            const g = trackStyle.columnGap || trackStyle.gap;
+            const n = parseFloat(g);
+            return Number.isFinite(n) ? n : 12;
+        })();
+        return firstItem.getBoundingClientRect().width + gapFromTrack + gap;
+    };
+
+    let itemWidth = getItemWidth();
     const totalItems = cardTrack.children.length;
 
     function updateCarousel() {
@@ -423,10 +127,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const amountToMove = -currentIndex * itemWidth;
         cardTrack.style.transform = `translateX(${amountToMove}px)`;
 
-        const bgWidth = indicatorBg.offsetWidth; 
+        const bgWidth = indicatorBg.offsetWidth;
         const barWidth = (visibleItems / totalItems) * bgWidth;
-        const finalBarWidth = Math.min(bgWidth, Math.max(30, barWidth)); 
-        
+        const finalBarWidth = Math.min(bgWidth, Math.max(30, barWidth));
+
         scrollBar.style.width = `${finalBarWidth}px`;
 
         if (maxIndex > 0) {
@@ -459,8 +163,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    window.addEventListener('resize', updateCarousel);
-    updateCarousel(); 
+    window.addEventListener('resize', () => {
+        itemWidth = getItemWidth();
+        updateCarousel();
+    });
+    updateCarousel();
 });
 
 // ==========================================
@@ -468,8 +175,8 @@ document.addEventListener('DOMContentLoaded', () => {
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
     const newTrack = document.getElementById('newCarouselTrack');
-    const newPrevBtn = document.getElementById('newCardPrevBtn'); 
-    const newNextBtn = document.getElementById('newCardNextBtn'); 
+    const newPrevBtn = document.getElementById('newCardPrevBtn');
+    const newNextBtn = document.getElementById('newCardNextBtn');
     const newScrollBar = document.getElementById('newScrollBar');
     // Is card ke andar mojood line background ko select kiya
     const parentCard = document.getElementById('newCarouselTrack').closest('.carousel-card');
@@ -478,7 +185,22 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!newTrack || !newIndicatorBg || !newScrollBar) return;
 
     let newCurrentIndex = 0;
-    const itemWidth = 212; 
+
+    const getItemWidth = () => {
+        const firstItem = newTrack.children[0];
+        if (!firstItem) return 212;
+        const style = window.getComputedStyle(firstItem);
+        const gap = parseFloat(style.marginRight) || 0;
+        const gapFromTrack = (() => {
+            const trackStyle = window.getComputedStyle(newTrack);
+            const g = trackStyle.columnGap || trackStyle.gap;
+            const n = parseFloat(g);
+            return Number.isFinite(n) ? n : 12;
+        })();
+        return firstItem.getBoundingClientRect().width + gapFromTrack + gap;
+    };
+
+    let itemWidth = getItemWidth();
     const totalItems = newTrack.children.length;
 
     function updateNewCarousel() {
@@ -492,10 +214,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const amountToMove = -newCurrentIndex * itemWidth;
         newTrack.style.transform = `translateX(${amountToMove}px)`;
 
-        const bgWidth = newIndicatorBg.offsetWidth; 
+        const bgWidth = newIndicatorBg.offsetWidth;
         const barWidth = (visibleItems / totalItems) * bgWidth;
-        const finalBarWidth = Math.min(bgWidth, Math.max(30, barWidth)); 
-        
+        const finalBarWidth = Math.min(bgWidth, Math.max(30, barWidth));
+
         newScrollBar.style.width = `${finalBarWidth}px`;
 
         if (maxIndex > 0) {
@@ -528,8 +250,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    window.addEventListener('resize', updateNewCarousel);
-    updateNewCarousel(); 
+    window.addEventListener('resize', () => {
+        itemWidth = getItemWidth();
+        updateNewCarousel();
+    });
+    updateNewCarousel();
 });
 // slider
 // ==========================================
@@ -537,10 +262,10 @@ document.addEventListener('DOMContentLoaded', () => {
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
     const beautyTrack = document.getElementById('beautyCarouselTrack');
-    const beautyPrevBtn = document.getElementById('beautyCardPrevBtn'); 
-    const beautyNextBtn = document.getElementById('beautyCardNextBtn'); 
+    const beautyPrevBtn = document.getElementById('beautyCardPrevBtn');
+    const beautyNextBtn = document.getElementById('beautyCardNextBtn');
     const beautyScrollBar = document.getElementById('beautyScrollBar');
-    
+
     // Poore card ke andar se scrollbar ka background div dhoonda
     const beautyParentCard = beautyTrack ? beautyTrack.closest('.carousel-card') : null;
     const beautyIndicatorBg = beautyParentCard ? beautyParentCard.querySelector('.scrollbar-indicator-bg') : null;
@@ -549,7 +274,22 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!beautyTrack || !beautyScrollBar || !beautyIndicatorBg) return;
 
     let beautyCurrentIndex = 0;
-    const beautyItemWidth = 212; // 200px image box width + 12px gap spacing
+
+    const getBeautyItemWidth = () => {
+        const firstItem = beautyTrack.children[0];
+        if (!firstItem) return 212;
+        const style = window.getComputedStyle(firstItem);
+        const gap = parseFloat(style.marginRight) || 0;
+        const gapFromTrack = (() => {
+            const trackStyle = window.getComputedStyle(beautyTrack);
+            const g = trackStyle.columnGap || trackStyle.gap;
+            const n = parseFloat(g);
+            return Number.isFinite(n) ? n : 12;
+        })();
+        return firstItem.getBoundingClientRect().width + gapFromTrack + gap;
+    };
+
+    let beautyItemWidth = getBeautyItemWidth();
     const beautyTotalItems = beautyTrack.children.length;
 
     function updateBeautyCarousel() {
@@ -566,10 +306,10 @@ document.addEventListener('DOMContentLoaded', () => {
         beautyTrack.style.transform = `translateX(${amountToMove}px)`;
 
         // Scrollbar bar logic calculations
-        const bgWidth = beautyIndicatorBg.offsetWidth; 
+        const bgWidth = beautyIndicatorBg.offsetWidth;
         const barWidth = (visibleItems / beautyTotalItems) * bgWidth;
         const finalBarWidth = Math.min(bgWidth, Math.max(30, barWidth)); // Bar size secure minimum 30px
-        
+
         beautyScrollBar.style.width = `${finalBarWidth}px`;
 
         // Smooth moving animation positioning
@@ -606,10 +346,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Screen resize dynamic adjustments
-    window.addEventListener('resize', updateBeautyCarousel);
-    
+    window.addEventListener('resize', () => {
+        beautyItemWidth = getBeautyItemWidth();
+        updateBeautyCarousel();
+    });
+
     // First time call structure
-    updateBeautyCarousel(); 
+    updateBeautyCarousel();
 });
 
 // slider
@@ -618,17 +361,32 @@ document.addEventListener('DOMContentLoaded', () => {
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
     const kitchenTrack = document.getElementById('kitchenCarouselTrack');
-    const kitchenPrevBtn = document.getElementById('kitchenCardPrevBtn'); 
-    const kitchenNextBtn = document.getElementById('kitchenCardNextBtn'); 
+    const kitchenPrevBtn = document.getElementById('kitchenCardPrevBtn');
+    const kitchenNextBtn = document.getElementById('kitchenCardNextBtn');
     const kitchenScrollBar = document.getElementById('kitchenScrollBar');
-    
+
     const kitchenParentCard = kitchenTrack ? kitchenTrack.closest('.carousel-card') : null;
     const kitchenIndicatorBg = kitchenParentCard ? kitchenParentCard.querySelector('.scrollbar-indicator-bg') : null;
 
     if (!kitchenTrack || !kitchenScrollBar || !kitchenIndicatorBg) return;
 
     let kitchenCurrentIndex = 0;
-    const kitchenItemWidth = 212; // 200px width + 12px gap
+
+    const getKitchenItemWidth = () => {
+        const firstItem = kitchenTrack.children[0];
+        if (!firstItem) return 212;
+        const style = window.getComputedStyle(firstItem);
+        const gap = parseFloat(style.marginRight) || 0;
+        const gapFromTrack = (() => {
+            const trackStyle = window.getComputedStyle(kitchenTrack);
+            const g = trackStyle.columnGap || trackStyle.gap;
+            const n = parseFloat(g);
+            return Number.isFinite(n) ? n : 12;
+        })();
+        return firstItem.getBoundingClientRect().width + gapFromTrack + gap;
+    };
+
+    let kitchenItemWidth = getKitchenItemWidth();
     const kitchenTotalItems = kitchenTrack.children.length;
 
     function updateKitchenCarousel() {
@@ -642,10 +400,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const amountToMove = -kitchenCurrentIndex * kitchenItemWidth;
         kitchenTrack.style.transform = `translateX(${amountToMove}px)`;
 
-        const bgWidth = kitchenIndicatorBg.offsetWidth; 
+        const bgWidth = kitchenIndicatorBg.offsetWidth;
         const barWidth = (visibleItems / kitchenTotalItems) * bgWidth;
-        const finalBarWidth = Math.min(bgWidth, Math.max(30, barWidth)); 
-        
+        const finalBarWidth = Math.min(bgWidth, Math.max(30, barWidth));
+
         kitchenScrollBar.style.width = `${finalBarWidth}px`;
 
         if (maxIndex > 0) {
@@ -678,8 +436,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    window.addEventListener('resize', updateKitchenCarousel);
-    updateKitchenCarousel(); 
+    window.addEventListener('resize', () => {
+        kitchenItemWidth = getKitchenItemWidth();
+        updateKitchenCarousel();
+    });
+    updateKitchenCarousel();
 });
 // SLIDER
 // ==========================================
@@ -687,17 +448,32 @@ document.addEventListener('DOMContentLoaded', () => {
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
     const elecTrack = document.getElementById('electronicsTrack');
-    const elecPrevBtn = document.getElementById('electronicsPrevBtn'); 
-    const elecNextBtn = document.getElementById('electronicsNextBtn'); 
+    const elecPrevBtn = document.getElementById('electronicsPrevBtn');
+    const elecNextBtn = document.getElementById('electronicsNextBtn');
     const elecScrollBar = document.getElementById('electronicsScrollBar');
-    
+
     const elecParentCard = elecTrack ? elecTrack.closest('.electronics-card-container') : null;
     const elecIndicatorBg = elecParentCard ? elecParentCard.querySelector('.electronics-bar-background') : null;
 
     if (!elecTrack || !elecScrollBar || !elecIndicatorBg) return;
 
     let elecCurrentIndex = 0;
-    const elecItemWidth = 212; // 200px image box + 12px gap
+
+    const getElecItemWidth = () => {
+        const firstItem = elecTrack.children[0];
+        if (!firstItem) return 212;
+        const style = window.getComputedStyle(firstItem);
+        const gap = parseFloat(style.marginRight) || 0;
+        const gapFromTrack = (() => {
+            const trackStyle = window.getComputedStyle(elecTrack);
+            const g = trackStyle.columnGap || trackStyle.gap;
+            const n = parseFloat(g);
+            return Number.isFinite(n) ? n : 12;
+        })();
+        return firstItem.getBoundingClientRect().width + gapFromTrack + gap;
+    };
+
+    let elecItemWidth = getElecItemWidth();
     const elecTotalItems = elecTrack.children.length;
 
     function updateElectronicsCarousel() {
@@ -711,10 +487,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const amountToMove = -elecCurrentIndex * elecItemWidth;
         elecTrack.style.transform = `translateX(${amountToMove}px)`;
 
-        const bgWidth = elecIndicatorBg.offsetWidth; 
+        const bgWidth = elecIndicatorBg.offsetWidth;
         const barWidth = (visibleItems / elecTotalItems) * bgWidth;
-        const finalBarWidth = Math.min(bgWidth, Math.max(30, barWidth)); 
-        
+        const finalBarWidth = Math.min(bgWidth, Math.max(30, barWidth));
+
         elecScrollBar.style.width = `${finalBarWidth}px`;
 
         if (maxIndex > 0) {
@@ -747,8 +523,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    window.addEventListener('resize', updateElectronicsCarousel);
-    updateElectronicsCarousel(); 
+    window.addEventListener('resize', () => {
+        elecItemWidth = getElecItemWidth();
+        updateElectronicsCarousel();
+    });
+    updateElectronicsCarousel();
 });
 // slider
 // ==========================================
@@ -756,17 +535,32 @@ document.addEventListener('DOMContentLoaded', () => {
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
     const sportsTrack = document.getElementById('sportsCarouselTrack');
-    const sportsPrevBtn = document.getElementById('sportsCardPrevBtn'); 
-    const sportsNextBtn = document.getElementById('sportsCardNextBtn'); 
+    const sportsPrevBtn = document.getElementById('sportsCardPrevBtn');
+    const sportsNextBtn = document.getElementById('sportsCardNextBtn');
     const sportsScrollBar = document.getElementById('sportsScrollBar');
-    
+
     const sportsParentCard = sportsTrack ? sportsTrack.closest('.carousel-card') : null;
     const sportsIndicatorBg = sportsParentCard ? sportsParentCard.querySelector('.scrollbar-indicator-bg') : null;
 
     if (!sportsTrack || !sportsScrollBar || !sportsIndicatorBg) return;
 
     let sportsCurrentIndex = 0;
-    const sportsItemWidth = 212; // 200px width + 12px gap (purani CSS ke mutabiq)
+
+    const getSportsItemWidth = () => {
+        const firstItem = sportsTrack.children[0];
+        if (!firstItem) return 212;
+        const style = window.getComputedStyle(firstItem);
+        const gap = parseFloat(style.marginRight) || 0;
+        const gapFromTrack = (() => {
+            const trackStyle = window.getComputedStyle(sportsTrack);
+            const g = trackStyle.columnGap || trackStyle.gap;
+            const n = parseFloat(g);
+            return Number.isFinite(n) ? n : 12;
+        })();
+        return firstItem.getBoundingClientRect().width + gapFromTrack + gap;
+    };
+
+    let sportsItemWidth = getSportsItemWidth();
     const sportsTotalItems = sportsTrack.children.length;
 
     function updateSportsCarousel() {
@@ -780,10 +574,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const amountToMove = -sportsCurrentIndex * sportsItemWidth;
         sportsTrack.style.transform = `translateX(${amountToMove}px)`;
 
-        const bgWidth = sportsIndicatorBg.offsetWidth; 
+        const bgWidth = sportsIndicatorBg.offsetWidth;
         const barWidth = (visibleItems / sportsTotalItems) * bgWidth;
-        const finalBarWidth = Math.min(bgWidth, Math.max(30, barWidth)); 
-        
+        const finalBarWidth = Math.min(bgWidth, Math.max(30, barWidth));
+
         sportsScrollBar.style.width = `${finalBarWidth}px`;
 
         if (maxIndex > 0) {
@@ -816,8 +610,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    window.addEventListener('resize', updateSportsCarousel);
-    updateSportsCarousel(); 
+    window.addEventListener('resize', () => {
+        sportsItemWidth = getSportsItemWidth();
+        updateSportsCarousel();
+    });
+    updateSportsCarousel();
 });
 // slider
 // ==========================================
@@ -825,17 +622,32 @@ document.addEventListener('DOMContentLoaded', () => {
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
     const toysTrack = document.getElementById('toysCarouselTrack');
-    const toysPrevBtn = document.getElementById('toysCardPrevBtn'); 
-    const toysNextBtn = document.getElementById('toysCardNextBtn'); 
+    const toysPrevBtn = document.getElementById('toysCardPrevBtn');
+    const toysNextBtn = document.getElementById('toysCardNextBtn');
     const toysScrollBar = document.getElementById('toysScrollBar');
-    
+
     const toysParentCard = toysTrack ? toysTrack.closest('.carousel-card') : null;
     const toysIndicatorBg = toysParentCard ? toysParentCard.querySelector('.scrollbar-indicator-bg') : null;
 
     if (!toysTrack || !toysScrollBar || !toysIndicatorBg) return;
 
     let toysCurrentIndex = 0;
-    const toysItemWidth = 212; // 200px width + 12px gap
+
+    const getToysItemWidth = () => {
+        const firstItem = toysTrack.children[0];
+        if (!firstItem) return 212;
+        const style = window.getComputedStyle(firstItem);
+        const gap = parseFloat(style.marginRight) || 0;
+        const gapFromTrack = (() => {
+            const trackStyle = window.getComputedStyle(toysTrack);
+            const g = trackStyle.columnGap || trackStyle.gap;
+            const n = parseFloat(g);
+            return Number.isFinite(n) ? n : 12;
+        })();
+        return firstItem.getBoundingClientRect().width + gapFromTrack + gap;
+    };
+
+    let toysItemWidth = getToysItemWidth();
     const toysTotalItems = toysTrack.children.length;
 
     function updateToysCarousel() {
@@ -849,10 +661,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const amountToMove = -toysCurrentIndex * toysItemWidth;
         toysTrack.style.transform = `translateX(${amountToMove}px)`;
 
-        const bgWidth = toysIndicatorBg.offsetWidth; 
+        const bgWidth = toysIndicatorBg.offsetWidth;
         const barWidth = (visibleItems / toysTotalItems) * bgWidth;
-        const finalBarWidth = Math.min(bgWidth, Math.max(30, barWidth)); 
-        
+        const finalBarWidth = Math.min(bgWidth, Math.max(30, barWidth));
+
         toysScrollBar.style.width = `${finalBarWidth}px`;
 
         if (maxIndex > 0) {
@@ -885,13 +697,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    window.addEventListener('resize', updateToysCarousel);
-    updateToysCarousel(); 
+    window.addEventListener('resize', () => {
+        toysItemWidth = getToysItemWidth();
+        updateToysCarousel();
+    });
+    updateToysCarousel();
 });
 
 
+// پرانا سائیڈ بار والا کوڈ ہٹا کر یہ والا لکھیں
+const openSidebarBtn = document.getElementById('openSidebarBtn');
+const panelOptions = document.getElementById('panelOptions');
 
-
+if (openSidebarBtn && panelOptions) {
+    openSidebarBtn.addEventListener('click', () => {
+        // یہ لائن کلک کرنے پر مینو کو کھولے گی اور بند کرے گی
+        panelOptions.classList.toggle('show-menu');
+    });
+}
 
 
 
