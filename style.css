@@ -865,3 +865,448 @@ h2 {
     border-radius: 2px;
     transition: left 0.3s ease-out, width 0.3s ease-out; /* Smooth slider track bar movement */
 }
+/* slider */
+/* ==========================================
+   ELECTRONICS SLIDER (DIFFERENT CLASSES)
+   ========================================== */
+.electronics-card-container {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    border-radius: 0px;
+}
+
+.electronics-heading {
+    font-size: 21px;
+    font-weight: 700;
+    color: #0F1111;
+    margin-bottom: 10px;
+    font-family: Arial, sans-serif;
+}
+
+.electronics-slider-frame {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.electronics-view-window {
+    width: 100%;
+    overflow: hidden;
+}
+
+.electronics-slider-track {
+    display: flex;
+    gap: 12px;
+    transition: transform 0.4s ease-in-out;
+    will-change: transform;
+}
+
+.electronics-product-item {
+    flex: 0 0 auto;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.electronics-product-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain !important;
+    cursor: pointer;
+}
+
+.electronics-arrow-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.98);
+    border: 1px solid #D5D9D9;
+    box-shadow: 0 2px 5px rgba(213,217,217,0.5);
+    width: 40px;
+    height: 45px;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.electronics-arrow-btn:hover {
+    background-color: #F7FAFA;
+    border-color: #A6ECEF;
+}
+
+.electronics-left-arrow { left: -15px; }
+.electronics-right-arrow { right: -15px; }
+
+/* Bottom Line Scrollbar Indicator */
+.electronics-bar-background {
+    width: 100%;
+    height: 4px;
+    background-color: #E2E6E6;
+    margin-top: 15px;
+    position: relative;
+    border-radius: 2px;
+}
+
+.electronics-bar-thumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #007185;
+    border-radius: 2px;
+    transition: left 0.3s ease-out, width 0.3s ease-out;
+}
+/* footer */
+/* ==========================================
+   AUTHENTIC AMAZON COMPREHENSIVE FOOTER
+   ========================================== */
+
+/* Main Reset Wrap for Footer Container Context */
+.amazon-main-footer {
+    width: 100%;
+    background-color: #ffffff;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.amazon-main-footer * {
+    box-sizing: border-box;
+}
+
+/* --- SECTION 1: SIGN IN RECOMMENDATIONS --- */
+.amazon-signin-panel {
+    background-color: #ffffff;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.footer-divider {
+    border: 0;
+    height: 1px;
+    background-color: #E7E7E7;
+    margin: 0;
+}
+
+.signin-clean-wrapper {
+    text-align: center;
+    padding: 35px 0;
+}
+
+.signin-msg {
+    font-size: 30px;
+    font-weight: bold;
+    color: #0F1111;
+    margin: 0 0 8px 0;
+}
+
+/* Amazon standard golden linear gradient button styling */
+.amazon-action-yellow-btn {
+    background: linear-gradient(to bottom,rgb(240, 240, 25),rgb(240, 240, 25));
+    border: 1px solid rgb(240, 240, 25);
+    border-color: rgb(240, 240, 25),rgb(240, 240, 25),rgb(240, 240, 25);
+    color: #111111;
+    border-radius: 50px;
+    width: 250px;
+    padding: 6px 0;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset;
+    font-family: Arial, sans-serif;
+}
+
+.amazon-action-yellow-btn:hover {
+    background: yellow;
+}
+
+.signup-prompt {
+    font-size: 12px;
+    color: #0F1111;
+    margin: 6px 0 0 0;
+}
+
+.signup-prompt a {
+    color: #007185;
+    text-decoration: none;
+}
+
+.signup-prompt a:hover {
+    color: #C7511F;
+    text-decoration: underline;
+}
+
+
+/* --- SECTION 2: BACK TO TOP ACTION --- */
+.footer-back-to-top-btn {
+    display: block;
+    width: 100%;
+    background-color: #37475A; /* Slate Navy Blue */
+    color: #ffffff;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 13px;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.15s ease-in-out;
+}
+
+.footer-back-to-top-btn:hover {
+    background-color: #485769; /* Balanced brighter gray hue */
+}
+
+
+/* --- SECTION 3: 4-COLUMN LINKS MATRIX --- */
+.footer-links-container {
+    background-color: #232F3E; /* Dark slate background color */
+    padding: 40px 20px 50px 20px;
+    width: 100%;
+    display: block;
+}
+
+.footer-links-row {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer-links-col {
+    flex: 1;
+    padding-right: 15px;
+}
+
+.footer-links-col h4 {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 14px 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer-links-col ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links-col ul li a {
+    color: #DDD;
+    font-size: 14px;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+}
+
+.footer-links-col ul li a:hover {
+    text-decoration: underline;
+    color: #ffffff;
+}
+
+.see-more-link {
+    font-size: 12px !important;
+}
+
+
+/* --- SECTION 4: SETTINGS BAR WITH BORDERS --- */
+.footer-settings-bar {
+    background-color: #232F3E;
+    border-top: 1px solid #3a4553; /* Soft line indicator border */
+    padding: 40px 20px;
+    width: 100%;
+}
+
+.settings-inner-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px; /* Gap between Amazon logo and items */
+}
+
+/* Dropdown settings boxes matching exact image look */
+.settings-selectors {
+    display: flex;
+    gap: 10px;
+}
+
+.selector-box {
+    border: 1px solid #a2a6ac;
+    border-radius: 3px;
+    padding: 6px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #CCC;
+    font-size: 12px;
+    cursor: pointer;
+    background-color: transparent;
+    user-select: none;
+}
+
+.selector-box:hover {
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+.globe-icon, .flag-icon {
+    font-size: 14px;
+}
+
+.currency-text {
+    font-weight: bold;
+    font-size: 11px;
+    color: #999;
+}
+
+.arrow-down {
+    font-size: 8px;
+    color: #7f868e;
+    margin-left: 5px;
+}
+
+/* Responsive adjustments for smaller windows */
+@media (max-width: 800px) {
+    .footer-links-row {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .settings-inner-wrapper {
+        flex-direction: column;
+        gap: 25px;
+    }
+    .settings-selectors {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+/* ==========================================
+   ADDED: DEEP SUB-FOOTER LINKS GRID (BLACK)
+   ========================================== */
+
+.amazon-sub-footer-links {
+    background-color: #131A22; /* Pure original Amazon deep black footer color */
+    padding: 40px 20px 30px 20px;
+    width: 100%;
+}
+
+/* 7 Columns Flexible Grid System exactly like Screenshot 3 */
+.sub-footer-grid-wrapper {
+    max-width: 1050px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    row-gap: 24px;
+    column-gap: 15px;
+}
+
+.sub-link-item {
+    display: block;
+}
+
+.sub-link-item a {
+    color: #DDD;
+    font-size: 11px;
+    font-weight: 600;
+    text-decoration: none;
+    line-height: 1.3;
+    font-family: Arial, sans-serif;
+    display: inline-block;
+}
+
+.sub-link-item a span {
+    color: #999;
+    font-weight: normal;
+    font-size: 10px;
+    display: block;
+}
+
+.sub-link-item a:hover {
+    text-decoration: underline;
+}
+
+/* Empty grid box slots for perfect spacing */
+.placeholder-empty {
+    visibility: hidden;
+}
+
+/* --- BOTTOM LEGAL TERMS BAR CONFIG --- */
+.sub-footer-legal-bar {
+    margin-top: 40px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.legal-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+}
+
+.legal-links a {
+    color: #DDD;
+    font-size: 11px;
+    text-decoration: none;
+}
+
+.legal-links a:hover {
+    text-decoration: underline;
+}
+
+/* Custom blue check privacy icon replication */
+.privacy-choices-flex {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.privacy-icon-mock {
+    background-color: #007185;
+    color: #ffffff;
+    font-size: 8px;
+    padding: 1px 4px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.copyright-text {
+    color: #DDD;
+    font-size: 11px;
+    margin: 5px 0 0 0;
+}
+
+/* Tablet / Mobile view formatting shifts */
+@media (max-width: 950px) {
+    .sub-footer-grid-wrapper {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .placeholder-empty {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .sub-footer-grid-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

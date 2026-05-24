@@ -681,7 +681,213 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', updateKitchenCarousel);
     updateKitchenCarousel(); 
 });
+// SLIDER
+// ==========================================
+// INDEPENDENT ELECTRONICS SLIDER JAVASCRIPT
+// ==========================================
+document.addEventListener('DOMContentLoaded', () => {
+    const elecTrack = document.getElementById('electronicsTrack');
+    const elecPrevBtn = document.getElementById('electronicsPrevBtn'); 
+    const elecNextBtn = document.getElementById('electronicsNextBtn'); 
+    const elecScrollBar = document.getElementById('electronicsScrollBar');
+    
+    const elecParentCard = elecTrack ? elecTrack.closest('.electronics-card-container') : null;
+    const elecIndicatorBg = elecParentCard ? elecParentCard.querySelector('.electronics-bar-background') : null;
 
+    if (!elecTrack || !elecScrollBar || !elecIndicatorBg) return;
+
+    let elecCurrentIndex = 0;
+    const elecItemWidth = 212; // 200px image box + 12px gap
+    const elecTotalItems = elecTrack.children.length;
+
+    function updateElectronicsCarousel() {
+        const containerWidth = elecTrack.parentElement.offsetWidth;
+        const visibleItems = Math.floor(containerWidth / elecItemWidth);
+        const maxIndex = Math.max(0, elecTotalItems - visibleItems);
+
+        if (elecCurrentIndex < 0) elecCurrentIndex = 0;
+        if (elecCurrentIndex > maxIndex) elecCurrentIndex = maxIndex;
+
+        const amountToMove = -elecCurrentIndex * elecItemWidth;
+        elecTrack.style.transform = `translateX(${amountToMove}px)`;
+
+        const bgWidth = elecIndicatorBg.offsetWidth; 
+        const barWidth = (visibleItems / elecTotalItems) * bgWidth;
+        const finalBarWidth = Math.min(bgWidth, Math.max(30, barWidth)); 
+        
+        elecScrollBar.style.width = `${finalBarWidth}px`;
+
+        if (maxIndex > 0) {
+            const scrollableWidth = bgWidth - finalBarWidth;
+            const progress = elecCurrentIndex / maxIndex;
+            elecScrollBar.style.left = `${progress * scrollableWidth}px`;
+        } else {
+            elecScrollBar.style.left = '0px';
+        }
+    }
+
+    if (elecNextBtn) {
+        elecNextBtn.addEventListener('click', () => {
+            const containerWidth = elecTrack.parentElement.offsetWidth;
+            const visibleItems = Math.floor(containerWidth / elecItemWidth);
+            const maxIndex = elecTotalItems - visibleItems;
+            if (elecCurrentIndex < maxIndex) {
+                elecCurrentIndex = Math.min(elecCurrentIndex + 2, maxIndex); // 2 Items aage jayega
+                updateElectronicsCarousel();
+            }
+        });
+    }
+
+    if (elecPrevBtn) {
+        elecPrevBtn.addEventListener('click', () => {
+            if (elecCurrentIndex > 0) {
+                elecCurrentIndex = Math.max(elecCurrentIndex - 2, 0); // 2 Items peeche jayega
+                updateElectronicsCarousel();
+            }
+        });
+    }
+
+    window.addEventListener('resize', updateElectronicsCarousel);
+    updateElectronicsCarousel(); 
+});
+// slider
+// ==========================================
+// PURE INDEPENDENT SPORTS SLIDER JAVASCRIPT
+// ==========================================
+document.addEventListener('DOMContentLoaded', () => {
+    const sportsTrack = document.getElementById('sportsCarouselTrack');
+    const sportsPrevBtn = document.getElementById('sportsCardPrevBtn'); 
+    const sportsNextBtn = document.getElementById('sportsCardNextBtn'); 
+    const sportsScrollBar = document.getElementById('sportsScrollBar');
+    
+    const sportsParentCard = sportsTrack ? sportsTrack.closest('.carousel-card') : null;
+    const sportsIndicatorBg = sportsParentCard ? sportsParentCard.querySelector('.scrollbar-indicator-bg') : null;
+
+    if (!sportsTrack || !sportsScrollBar || !sportsIndicatorBg) return;
+
+    let sportsCurrentIndex = 0;
+    const sportsItemWidth = 212; // 200px width + 12px gap (purani CSS ke mutabiq)
+    const sportsTotalItems = sportsTrack.children.length;
+
+    function updateSportsCarousel() {
+        const containerWidth = sportsTrack.parentElement.offsetWidth;
+        const visibleItems = Math.floor(containerWidth / sportsItemWidth);
+        const maxIndex = Math.max(0, sportsTotalItems - visibleItems);
+
+        if (sportsCurrentIndex < 0) sportsCurrentIndex = 0;
+        if (sportsCurrentIndex > maxIndex) sportsCurrentIndex = maxIndex;
+
+        const amountToMove = -sportsCurrentIndex * sportsItemWidth;
+        sportsTrack.style.transform = `translateX(${amountToMove}px)`;
+
+        const bgWidth = sportsIndicatorBg.offsetWidth; 
+        const barWidth = (visibleItems / sportsTotalItems) * bgWidth;
+        const finalBarWidth = Math.min(bgWidth, Math.max(30, barWidth)); 
+        
+        sportsScrollBar.style.width = `${finalBarWidth}px`;
+
+        if (maxIndex > 0) {
+            const scrollableWidth = bgWidth - finalBarWidth;
+            const progress = sportsCurrentIndex / maxIndex;
+            sportsScrollBar.style.left = `${progress * scrollableWidth}px`;
+        } else {
+            sportsScrollBar.style.left = '0px';
+        }
+    }
+
+    if (sportsNextBtn) {
+        sportsNextBtn.addEventListener('click', () => {
+            const containerWidth = sportsTrack.parentElement.offsetWidth;
+            const visibleItems = Math.floor(containerWidth / sportsItemWidth);
+            const maxIndex = sportsTotalItems - visibleItems;
+            if (sportsCurrentIndex < maxIndex) {
+                sportsCurrentIndex = Math.min(sportsCurrentIndex + 2, maxIndex); // 2 Items aage slide karega
+                updateSportsCarousel();
+            }
+        });
+    }
+
+    if (sportsPrevBtn) {
+        sportsPrevBtn.addEventListener('click', () => {
+            if (sportsCurrentIndex > 0) {
+                sportsCurrentIndex = Math.max(sportsCurrentIndex - 2, 0); // 2 Items peeche slide karega
+                updateSportsCarousel();
+            }
+        });
+    }
+
+    window.addEventListener('resize', updateSportsCarousel);
+    updateSportsCarousel(); 
+});
+// slider
+// ==========================================
+// PURE INDEPENDENT TOYS SLIDER JAVASCRIPT
+// ==========================================
+document.addEventListener('DOMContentLoaded', () => {
+    const toysTrack = document.getElementById('toysCarouselTrack');
+    const toysPrevBtn = document.getElementById('toysCardPrevBtn'); 
+    const toysNextBtn = document.getElementById('toysCardNextBtn'); 
+    const toysScrollBar = document.getElementById('toysScrollBar');
+    
+    const toysParentCard = toysTrack ? toysTrack.closest('.carousel-card') : null;
+    const toysIndicatorBg = toysParentCard ? toysParentCard.querySelector('.scrollbar-indicator-bg') : null;
+
+    if (!toysTrack || !toysScrollBar || !toysIndicatorBg) return;
+
+    let toysCurrentIndex = 0;
+    const toysItemWidth = 212; // 200px width + 12px gap
+    const toysTotalItems = toysTrack.children.length;
+
+    function updateToysCarousel() {
+        const containerWidth = toysTrack.parentElement.offsetWidth;
+        const visibleItems = Math.floor(containerWidth / toysItemWidth);
+        const maxIndex = Math.max(0, toysTotalItems - visibleItems);
+
+        if (toysCurrentIndex < 0) toysCurrentIndex = 0;
+        if (toysCurrentIndex > maxIndex) toysCurrentIndex = maxIndex;
+
+        const amountToMove = -toysCurrentIndex * toysItemWidth;
+        toysTrack.style.transform = `translateX(${amountToMove}px)`;
+
+        const bgWidth = toysIndicatorBg.offsetWidth; 
+        const barWidth = (visibleItems / toysTotalItems) * bgWidth;
+        const finalBarWidth = Math.min(bgWidth, Math.max(30, barWidth)); 
+        
+        toysScrollBar.style.width = `${finalBarWidth}px`;
+
+        if (maxIndex > 0) {
+            const scrollableWidth = bgWidth - finalBarWidth;
+            const progress = toysCurrentIndex / maxIndex;
+            toysScrollBar.style.left = `${progress * scrollableWidth}px`;
+        } else {
+            toysScrollBar.style.left = '0px';
+        }
+    }
+
+    if (toysNextBtn) {
+        toysNextBtn.addEventListener('click', () => {
+            const containerWidth = toysTrack.parentElement.offsetWidth;
+            const visibleItems = Math.floor(containerWidth / toysItemWidth);
+            const maxIndex = toysTotalItems - visibleItems;
+            if (toysCurrentIndex < maxIndex) {
+                toysCurrentIndex = Math.min(toysCurrentIndex + 2, maxIndex); // 2 Items aage slide karega
+                updateToysCarousel();
+            }
+        });
+    }
+
+    if (toysPrevBtn) {
+        toysPrevBtn.addEventListener('click', () => {
+            if (toysCurrentIndex > 0) {
+                toysCurrentIndex = Math.max(toysCurrentIndex - 2, 0); // 2 Items peeche slide karega
+                updateToysCarousel();
+            }
+        });
+    }
+
+    window.addEventListener('resize', updateToysCarousel);
+    updateToysCarousel(); 
+});
 
 
 
