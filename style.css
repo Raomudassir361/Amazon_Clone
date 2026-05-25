@@ -269,7 +269,7 @@ body.dark .sub-footer-legal-bar {
 }
 
 .logo {
-    background-image: url('https://pngimg.com/uploads/amazon/amazon_PNG11.png');
+    background-image: url('./assets/amazon_PNG11.png');
     background-size: cover;
     height: 33px;
     width: 100px;
@@ -658,11 +658,12 @@ h2 {
     font-size: 12px;
     color: #0F1111;
     margin-top: 6px;
+    /* margin-left: 10px; */
 }
 
 .image-box {
     height: 120px;
-    background-color: #f7f8f8;
+    /* background-color: #f7f8f8; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -676,12 +677,12 @@ h2 {
 }
 
 /* Specific background styles based on image variants */
-.blue-bg {
-    background-color: #f0f8ff; /* Soft light blue background */
-}
+ /* .blue-bg {
+      background-color: #f0f8ff;
+} */
 
 .pattern-bg {
-    background: linear-gradient(135deg, #e0f0ff 25%, #f0f8ff 25%, #f0f8ff 50%, #e0f0ff 50%, #e0f0ff 75%, #f0f8ff 75%, #f0f8ff 100%);
+    /* background: linear-gradient(135deg, #e0f0ff 25%, #f0f8ff 25%, #f0f8ff 50%, #e0f0ff 50%, #e0f0ff 75%, #f0f8ff 75%, #f0f8ff 100%); */
     background-size: 20px 20px;
 }
 
@@ -689,7 +690,7 @@ h2 {
 .kitchen-card .main-featured-img {
     height: 160px;
     width: 100%;
-    background-color: #f7f8f8;
+    /* background-color: #f7f8f8; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -719,7 +720,7 @@ h2 {
 
 .image-box-sm {
     height: 80px;
-    background-color: #f7f8f8;
+    /* background-color: #f7f8f8; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -869,7 +870,7 @@ h2 {
 /* Image background wrapper with precise padding & size adjustments */
 .quad-img-wrapper {
     height: 120px;
-    background-color: #f7f8f8; /* Soft subtle Amazon grey */
+    /* background-color: #f7f8f8; Soft subtle Amazon grey */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -892,7 +893,7 @@ h2 {
 .quad-item-label {
     font-size: 12px;
     color: #0F1111;
-    margin-top: 6px;
+    margin-top: 4px;
     font-family: Arial, sans-serif;
 }
 
